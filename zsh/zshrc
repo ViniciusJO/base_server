@@ -1,0 +1,86 @@
+
+# __CUSTOM_CONFIG__
+
+export BASE_ZSH_CONFIGS="/etc/zsh/functions"
+export BASE_ZSH_SHARE=$HOME/.local/share/zsh
+
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.local/share/bob/nvim-bin:$PATH
+export LD_LIBRARY_PATH=$HOME/.local/lib:$LD_LIBRARY_PATH
+
+export FPATH=$BASE_ZSH_SHARE/completions:$FPATH
+export MANPATH="/usr/local/man:$HOME/.local/share/man:$MANPATH"
+export MANPAGER="nvim +Man!"
+
+export NODE_VERSION="23.1"
+
+source "$BASE_ZSH_CONFIGS/aliases.sh"
+source "$BASE_ZSH_CONFIGS/colors.sh"
+source "$BASE_ZSH_CONFIGS/functions.sh"
+
+# General configs
+# Preferred editor for local and remote sessions
+export EDITOR=$(
+	( existCommand "nvim" && echo "nvim" ) || \
+	( existCommand "vim" && echo "vim" ) || \
+	( existCommand "nano" && echo "nano" )
+)
+
+# Evals
+existCommand "starship" || (curl -sS https://starship.rs/install.sh | sh) && eval "$(starship init zsh)"
+existCommand "zoxide"   && eval "$(zoxide init zsh)"
+# existCommand "fzf"			&& eval "$(fzf --zsh)"
+existCommand "fuck"			&& eval "$(thefuck --alias)"
+
+## Completiions
+autoload -U compinit && compinit
+
+# Plugins
+export ZSH_PLUGINS=$BASE_ZSH_SHARE/plugins
+
+botstrap_plugin zsh-autosuggestions https://github.com/zsh-users/zsh-autosuggestions
+botstrap_plugin zsh-completions https://github.com/zsh-users/zsh-completions.git
+botstrap_plugin zsh-syntax-highlighting https://github.com/zsh-users/zsh-syntax-highlighting.git
+botstrap_plugin fzf_tab https://github.com/Aloxaf/fzf-tab
+botstrap_plugin you_should_use https://github.com/MichaelAquilina/zsh-you-should-use.git
+
+botstrap_omzsh_plugin "aliases git npm pip python pyenv sudo systemd zsh-autosuggestions zsh-syntax-highlighting colored-man-pages command-not-found archlinux"
+# botstrap_omzsh_plugin "aliases git docker npm pip python pyenv sudo systemd zsh-autosuggestions zsh-syntax-highlighting colored-man-pages command-not-found archlinux"
+
+find $ZSH_PLUGINS -maxdepth 2 -name "*.zsh" | while read -r plugin; do source $plugin; done
+
+# Completions
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --icons --color=always $realpath'
+zstyle ':fzf-tab:complete:nvim:*' fzf-preview 'if [ -f $realpath ]; then pygmentize -g $realpath; else eza -1 --icons --color $realpath; fi'
+zstyle ':fzf-tab:*' switch-group '<' '>'
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+
+# Special Keybindings
+bindkey "^[[H"  beginning-of-line				# END
+bindkey	"^[[1~"	beginning-of-line				# END
+bindkey "^[[F"  end-of-line							# HOME
+bindkey	"^[[4~"	end-of-line							# HOME
+bindkey "^[[3~" delete-char							# DEL
+bindkey "^[[1;5C" forward-word					# CTRL + RIGHT
+bindkey "^[[1;5D" backward-word					# CTRL + LEFT
+#		History Keybindings
+bindkey '^[[A' history-search-backward	# UP
+bindkey '' history-search-backward		# CTRL + P
+bindkey '^[[B' history-search-forward		# DOWN
+bindkey '' history-search-forward			# CTRL + N
+
+# History
+HISTSIZE=50000
+HISTFILE=$HOME/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+unsetCustomFuncs
