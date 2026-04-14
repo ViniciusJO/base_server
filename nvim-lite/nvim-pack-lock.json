@@ -1,0 +1,105 @@
+{
+  "plugins": {
+    "LuaSnip": {
+      "rev": "dae4f5aaa3574bd0c2b9dd20fb9542a02c10471c",
+      "src": "https://github.com/L3MON4D3/LuaSnip"
+    },
+    "blink.cmp": {
+      "rev": "4b18c32adef2898f95cdef6192cbd5796c1a332d",
+      "src": "https://github.com/saghen/blink.cmp",
+      "version": "1.0.0 - 2.0.0"
+    },
+    "cmp-buffer": {
+      "rev": "b74fab3",
+      "src": "https://github.com/hrsh7th/cmp-buffer"
+    },
+    "cmp-calc": {
+      "rev": "5947b41",
+      "src": "https://github.com/hrsh7th/cmp-calc"
+    },
+    "cmp-cmdline": {
+      "rev": "d126061",
+      "src": "https://github.com/hrsh7th/cmp-cmdline"
+    },
+    "cmp-nvim-lsp": {
+      "rev": "cbc7b02",
+      "src": "https://github.com/hrsh7th/cmp-nvim-lsp"
+    },
+    "cmp-path": {
+      "rev": "c642487",
+      "src": "https://github.com/hrsh7th/cmp-path"
+    },
+    "cmp_luasnip": {
+      "rev": "98d9cb5",
+      "src": "https://github.com/saadparwaiz1/cmp_luasnip"
+    },
+    "efmls-configs-nvim": {
+      "rev": "2dd907fe0043b95a901a9aee814f17804aa4426d",
+      "src": "https://github.com/creativenull/efmls-configs-nvim"
+    },
+    "fyler.nvim": {
+      "rev": "560c627",
+      "src": "https://www.github.com/A7Lavinraj/fyler.nvim"
+    },
+    "fzf-lua": {
+      "rev": "b2c0603216adb92c6bba81053bc996d7ae95b77a",
+      "src": "https://www.github.com/ibhagwan/fzf-lua"
+    },
+    "gitsigns.nvim": {
+      "rev": "9f3c6dd7868bcc116e9c1c1929ce063b978fa519",
+      "src": "https://www.github.com/lewis6991/gitsigns.nvim"
+    },
+    "lazydev.nvim": {
+      "rev": "5231c62",
+      "src": "https://www.github.com/folke/lazydev.nvim"
+    },
+    "mason-lspconfig.nvim": {
+      "rev": "a324581",
+      "src": "https://github.com/mason-org/mason-lspconfig.nvim"
+    },
+    "mason.nvim": {
+      "rev": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65",
+      "src": "https://github.com/mason-org/mason.nvim"
+    },
+    "mini.nvim": {
+      "rev": "dbb073bd2ed4a7bb35daafc7989567f0ff1426ee",
+      "src": "https://www.github.com/echasnovski/mini.nvim"
+    },
+    "neoconf.nvim": {
+      "rev": "26c5593",
+      "src": "https://www.github.com/folke/neoconf.nvim"
+    },
+    "neodev.nvim": {
+      "rev": "46aa467",
+      "src": "https://www.github.com/folke/neodev.nvim"
+    },
+    "nvim-cmp": {
+      "rev": "da88697",
+      "src": "https://github.com/hrsh7th/nvim-cmp"
+    },
+    "nvim-lspconfig": {
+      "rev": "5a855bcfec7973767a1a472335684bbd71d2fa2b",
+      "src": "https://www.github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-tree.lua": {
+      "rev": "e11ce83ed9a00f065bf676ae4e6c261c766989ba",
+      "src": "https://www.github.com/nvim-tree/nvim-tree.lua"
+    },
+    "nvim-treesitter": {
+      "rev": "fcd51bbe9245aa9b79a3930ed9ac42e16e1cf33f",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+    },
+    "nvim-web-devicons": {
+      "rev": "737cf6c",
+      "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    },
+    "which-key.nvim": {
+      "rev": "3aab214",
+      "src": "https://github.com/folke/which-key.nvim"
+    },
+    "zig.vim": {
+      "rev": "1a1112e",
+      "src": "https://github.com/ziglang/zig.vim"
+    }
+  }
+}
