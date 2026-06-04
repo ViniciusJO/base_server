@@ -6,4 +6,9 @@ Basic configurations for:
 - [tmux](https://github.com/tmux/tmux)
 - [zsh](https://www.zsh.org/)
 
-Intended to use with [stow](https://www.gnu.org/software/stow/)
+The script `install.sh` puts the `nvim` and `tmux` configs in the propper local directories. The `zsh` is configured globbaly. The script do not need any argument and can be called:
+
+```sh
+./install.sh
+```
+
